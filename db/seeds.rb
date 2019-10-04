@@ -25,10 +25,10 @@ tests = [['HTML5 feature', 1, category_html],
 end
 Test.create(tests)
 
-test_tags = Test.where(title: 'semantic tags').first
-test_css3 = Test.where(title: 'CSS3 feature').first
-test_arrow_functions = Test.where(title: 'arrow functions').first
-test_observers = Test.where(title: 'observers').first
+test_tags = Test.find_by(title: 'semantic tags')
+test_css3 = Test.find_by(title: 'CSS3 feature')
+test_arrow_functions = Test.find_by(title: 'arrow functions')
+test_observers = Test.find_by(title: 'observers')
 
 # create questions
 questions = [['Can you offer a use case for the new arrow => function syntax? How does this new syntax differ from other functions?', test_arrow_functions],
@@ -40,8 +40,8 @@ questions = [['Can you offer a use case for the new arrow => function syntax? Ho
 end
 Question.create(questions)
 
-question_tag_diff = Question.where(body: 'What difference between b and strong tags?').first
-question_box_shadow = Question.where(body: 'What property using for creating shadow?').first
+question_tag_diff = Question.find_by(body: 'What difference between b and strong tags?')
+question_box_shadow = Question.find_by(body: 'What property using for creating shadow?')
 
 # create answers
 answers = [['There is no difference between them.', false, question_tag_diff],
@@ -58,8 +58,8 @@ users = [%w[Amanda pa$$word], %w[Mike passw0rd]].map do |login, password|
 end
 User.create(users)
 
-user_amanda = User.where(login: 'Amanda').first
-user_mike = User.where(login: 'Mike').first
+user_amanda = User.find_by(login: 'Amanda')
+user_mike = User.find_by(login: 'Mike')
 
 # create passing tests
 passing_tests = [[user_amanda, test_tags, true],
