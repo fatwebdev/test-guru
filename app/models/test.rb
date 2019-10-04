@@ -7,8 +7,8 @@ class Test < ApplicationRecord
   def self.sorted_desc_by_category_title(title)
     Test
       .joins(:category)
-      .order(id: :desc)
       .where('categories.title = ?', title)
+      .order(id: :desc)
       .pluck('tests.title')
   end
 end
