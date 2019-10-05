@@ -8,6 +8,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# create users
+users = [%w[Amanda pa$$word], %w[Mike passw0rd]].map do |login, password|
+  { login: login, password: password }
+end
+User.create(users)
+
+user_amanda = User.find_by(login: 'Amanda')
+user_mike = User.find_by(login: 'Mike')
+
 # create categories
 category_html, category_css, category_js = %w[HTML CSS JS].map do |title|
   entity = Category.new(title: title)
@@ -16,12 +25,12 @@ category_html, category_css, category_js = %w[HTML CSS JS].map do |title|
 end
 
 # create tests
-tests = [['HTML5 feature', 1, category_html],
-         ['semantic tags', 2, category_html],
-         ['CSS3 feature', 1, category_css],
-         ['arrow functions', 2, category_js],
-         ['observers', 3, category_js]].map do |title, level, category|
-  { title: title, level: level, category_id: category.id }
+tests = [['HTML5 feature', 1, category_html, user_amanda],
+         ['semantic tags', 2, category_html, user_amanda],
+         ['CSS3 feature', 1, category_css, user_amanda],
+         ['arrow functions', 2, category_js, user_amanda],
+         ['observers', 3, category_js, user_mike]].map do |title, level, category, author|
+  { title: title, level: level, category_id: category.id, author: author }
 end
 Test.create(tests)
 
@@ -51,15 +60,6 @@ answers = [['There is no difference between them.', false, question_tag_diff],
   { body: body, correct: correct, question_id: question.id }
 end
 Answer.create(answers)
-
-# create users
-users = [%w[Amanda pa$$word], %w[Mike passw0rd]].map do |login, password|
-  { login: login, password: password }
-end
-User.create(users)
-
-user_amanda = User.find_by(login: 'Amanda')
-user_mike = User.find_by(login: 'Mike')
 
 # create passing tests
 passing_tests = [[user_amanda, test_tags, true],
