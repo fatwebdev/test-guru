@@ -20,7 +20,11 @@ class Test < ApplicationRecord
     Test
       .joins(:category)
       .where(categories: { title: title })
+  }
+
+  def self.sorted_desc_by_category_title(title)
+    by_category(title)
       .order(id: :desc)
       .pluck('tests.title')
-  }
+  end
 end
