@@ -10,12 +10,11 @@ class Test < ApplicationRecord
   scope :level_easy, -> { level(0..1) }
   scope :level_medium, -> { level(2..4) }
   scope :level_hard, -> { level(5..Float::INFINITY) }
-
-  def self.sorted_desc_by_category_title(title)
+  scope :by_category, lambda { |title|
     Test
       .joins(:category)
       .where(categories: { title: title })
       .order(id: :desc)
       .pluck('tests.title')
-  end
+  }
 end
