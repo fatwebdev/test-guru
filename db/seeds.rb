@@ -8,6 +8,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# create users
+users = [%w[Amanda pa$$word], %w[Mike passw0rd]].map do |login, password|
+  { login: login, password: password }
+end
+User.create(users)
+
+user_amanda = User.find_by(login: 'Amanda')
+user_mike = User.find_by(login: 'Mike')
+
 # create categories
 category_html, category_css, category_js = %w[HTML CSS JS].map do |title|
   entity = Category.new(title: title)
@@ -16,12 +25,12 @@ category_html, category_css, category_js = %w[HTML CSS JS].map do |title|
 end
 
 # create tests
-tests = [['HTML5 feature', 1, category_html],
-         ['semantic tags', 2, category_html],
-         ['CSS3 feature', 1, category_css],
-         ['arrow functions', 2, category_js],
-         ['observers', 3, category_js]].map do |title, level, category|
-  { title: title, level: level, category_id: category.id }
+tests = [['HTML5 feature', 1, category_html, user_amanda],
+         ['semantic tags', 2, category_html, user_amanda],
+         ['CSS3 feature', 1, category_css, user_amanda],
+         ['arrow functions', 2, category_js, user_amanda],
+         ['observers', 3, category_js, user_mike]].map do |title, level, category, author|
+  { title: title, level: level, category: category, author: author }
 end
 Test.create(tests)
 
@@ -36,7 +45,7 @@ questions = [['Can you offer a use case for the new arrow => function syntax? Ho
              ['What interface provides the ability to watch for changes being made to the DOM tree?', test_observers],
              ['What property using for creating shadow?', test_css3],
              ['What difference between b and strong tags?', test_tags]].map do |body, test|
-  { body: body, test_id: test.id }
+  { body: body, test: test }
 end
 Question.create(questions)
 
@@ -48,24 +57,16 @@ answers = [['There is no difference between them.', false, question_tag_diff],
            ['There is a semantic difference between them', true, question_tag_diff],
            ['shadow-box', false, question_box_shadow],
            ['box-shadow', true, question_box_shadow]].map do |body, correct, question|
-  { body: body, correct: correct, question_id: question.id }
+  { body: body, correct: correct, question: question }
 end
 Answer.create(answers)
 
-# create users
-users = [%w[Amanda pa$$word], %w[Mike passw0rd]].map do |login, password|
-  { login: login, password: password }
-end
-User.create(users)
-
-user_amanda = User.find_by(login: 'Amanda')
-user_mike = User.find_by(login: 'Mike')
-
 # create passing tests
-passing_tests = [[user_amanda, test_tags, true],
-                 [user_amanda, test_css3, true],
-                 [user_mike, test_tags, false],
-                 [user_mike, test_css3, true]].map do |user, test, done|
-  { user_id: user.id, test_id: test.id, done: done }
+passing_tests = [[user_amanda, test_tags, true, question_tag_diff],
+                 [user_amanda, test_css3, true, question_box_shadow],
+                 [user_mike, test_tags, false, question_tag_diff],
+                 [user_mike, test_css3, true, question_box_shadow]].map do |user, test, done, question|
+  { user: user, test: test, done: done, current_question: question }
 end
+
 PassingTest.create(passing_tests)
