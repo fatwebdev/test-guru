@@ -1,5 +1,14 @@
 <h1>New question</h1>
 
+<% if @question.errors.any? %>
+  <b>Errors:</b>
+  <ul>
+    <% @question.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <form action="<%= test_questions_path %>" method="post">
   <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 
