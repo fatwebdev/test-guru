@@ -2,6 +2,8 @@
 <br/>
 <br/>
 <hr/>
-<p>
-  Today is <%= Date.today.year %> year. And in 2019 Yan created <a href="https://github.com/fatwebdev/test-guru" target="_blank">test-guru</a> (rails application for creating and passing tests) when he was learning in online school <a href="http://thinknetica.com/" target="_blank">Thinknetica</a>.
-</p>
+<footer>
+  <p><%= current_year %> | Yan | <%= github_url('fatwebdev', 'test-guru') %></p>
+  <p>Educational project in online-school Thinknetica</p>
+  <p><%= link_to 'online school Thinknetica', 'http://thinknetica.com/', target: :_blank %></p>
+</footer>
