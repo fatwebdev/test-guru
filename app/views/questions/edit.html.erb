@@ -1,0 +1,6 @@
+<h1>Edit question</h1>
+
+<%= render 'form', model: @question, entity: @question %>
+
+<br/>
+<%= link_to 'Back to test', test_path(@question.test) %>

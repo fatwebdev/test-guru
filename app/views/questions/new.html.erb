@@ -1,22 +1,6 @@
 <h1>New question</h1>
 
-<% if @question.errors.any? %>
-  <b>Errors:</b>
-  <ul>
-    <% @question.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-<% end %>
+<%= render 'form', model: [@question.test, @question], entity: @question %>
 
-<form action="<%= test_questions_path %>" method="post">
-  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-
-  <label for="new_question">Question:</label>
-  <br/>
-  <textarea id="new_question" type="text" name="question[body]"></textarea>
-  <br/>
-  <br/>
-
-  <button type="submit">save</button>
-</form>
+<br/>
+<%= link_to 'Back to test', test_path(@question.test) %>

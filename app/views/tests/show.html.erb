@@ -1,0 +1,8 @@
+<h1><%= @test.title %></h1>
+<p>category: <%= @test.category.title %>, level: <%= @test.level %></p>
+
+<%= render 'questions/list' %>
+
+<br/>
+<%= link_to 'Back to tests', root_path %> |
+<%= link_to 'Edit', edit_test_path(@test) %>
