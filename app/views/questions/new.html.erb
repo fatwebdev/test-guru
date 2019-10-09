@@ -1,7 +1,7 @@
 <h1><%= question_header_for(:new) %></h1>
 
 
-<%= render 'form', model: [@question.test, @question], entity: @question %>
+<%= render 'form' %>
 
 <br/>
 <%= link_to 'Back to test', test_path(@question.test) %>
