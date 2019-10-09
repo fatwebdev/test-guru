@@ -4,7 +4,7 @@ module QuestionsHelper
     edit: ->(title) { "Edit #{title} Question" }
   }
 
-  def question_header
-    QUESTION_HEADERS[action_name.to_sym].call(@question.test.title)
+  def question_header_for(action)
+    QUESTION_HEADERS[action].call(@question.test.title)
   end
 end
