@@ -5,7 +5,7 @@ class PassingTestsController < ApplicationController
   end
 
   def update
-    @passing_test.accept!(params[:answer_ids])
+    @passing_test.accept!(answer_ids)
 
     if @passing_test.completed?
       redirect_to result_passing_test_path(@passing_test)
@@ -21,5 +21,9 @@ class PassingTestsController < ApplicationController
 
   def set_passing_test
     @passing_test = PassingTest.find(params[:id])
+  end
+
+  def answer_ids
+    params[:answer_ids] || []
   end
 end
