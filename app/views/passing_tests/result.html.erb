@@ -1,0 +1,11 @@
+<h1>The <%= @passing_test.test.title %> Test was Completed!</h1>
+
+<p>
+  You were right
+  <span class="<%= @passing_test.percentage_of_completion >= 85 ? "pass" : "fail" %>">
+    <%= @passing_test.percentage_of_completion %>%
+  </span>
+  of the time.
+</p>
+
+<%= link_to 'Back to Tests', tests_path %>
