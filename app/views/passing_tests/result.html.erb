@@ -2,7 +2,7 @@
 
 <p>
   You were right
-  <span class="<%= @passing_test.percentage_of_completion >= 85 ? "pass" : "fail" %>">
+  <span class="<%= @passing_test.passed? ? "pass" : "fail" %>">
     <%= @passing_test.percentage_of_completion %>%
   </span>
   of the time.

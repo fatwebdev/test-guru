@@ -6,6 +6,8 @@ class PassingTest < ApplicationRecord
   before_validation :before_validation_set_first_question, on: :create
   before_validation :before_validation_set_next_question, on: :update
 
+  MINIMUM_PERCENTAGE = 85
+
   def accept!(answer_ids)
     if correct_answer?(answer_ids)
       self.correct_questions += 1
@@ -20,6 +22,10 @@ class PassingTest < ApplicationRecord
 
   def percentage_of_completion
     ((correct_questions.to_f / test.questions.count) * 100).round
+  end
+
+  def passed?
+    percentage_of_completion >= MINIMUM_PERCENTAGE
   end
 
   private
