@@ -10,7 +10,7 @@
 
 # create users
 users = [%w[amanda amanda@test.ru pa$$word], %w[mike mike@test.ru passw0rd]].map do |login, email, password|
-  { login: login, email: email, password: password }
+  { login: login, email: email, password_digest: password }
 end
 User.create!(users)
 
