@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'tests#index'
 
   get :login, to: 'sessions#new'
+  delete :logout, to: 'sessions#destroy'
 
   resources :sessions, only: :create
   resources :users, only: %i[new create]
