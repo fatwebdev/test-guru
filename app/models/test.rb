@@ -27,4 +27,12 @@ class Test < ApplicationRecord
       .order(id: :desc)
       .pluck('tests.title')
   end
+
+  def question_sequence_number(question)
+    questions.order(:id).index(question) + 1
+  end
+
+  def next_question_after(question)
+    questions.order(:id).where('id > ?', question.id).first
+  end
 end
