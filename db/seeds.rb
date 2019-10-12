@@ -9,10 +9,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # create users
-users = [%w[amanda amanda@test.ru pa$$word], %w[mike mike@test.ru passw0rd]].map do |login, email, password|
-  { login: login, email: email, password_digest: password }
+[%w[amanda amanda@test.ru pa$$word], %w[mike mike@test.ru passw0rd]].map do |login, email, password|
+  User.new(login: login, email: email, password: password).save
 end
-User.create!(users)
 
 user_amanda = User.find_by(email: 'amanda@test.ru')
 user_mike = User.find_by(email: 'mike@test.ru')
