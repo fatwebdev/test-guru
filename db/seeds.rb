@@ -9,13 +9,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # create users
-users = [%w[Amanda pa$$word], %w[Mike passw0rd]].map do |login, password|
-  { login: login, password: password }
+[%w[amanda amanda@test.ru pa$$word], %w[mike mike@test.ru passw0rd]].map do |login, email, password|
+  User.new(login: login, email: email, password: password).save
 end
-User.create(users)
 
-user_amanda = User.find_by(login: 'Amanda')
-user_mike = User.find_by(login: 'Mike')
+user_amanda = User.find_by(email: 'amanda@test.ru')
+user_mike = User.find_by(email: 'mike@test.ru')
 
 # create categories
 category_html, category_css, category_js = %w[HTML CSS JS].map do |title|
