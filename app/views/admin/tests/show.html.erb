@@ -10,7 +10,7 @@
       </tr>
     </thead>
     <tbody>
-      <%= render @test.questions %>
+      <%= render partial: 'questions/question', collection: @test.questions %>
     </tbody>
   </table>
 
@@ -18,5 +18,5 @@
 </div>
 
 <br/>
-<%= link_to 'Back to tests', root_path %> |
-<%= link_to 'Edit', edit_test_path(@test) %>
+<%= link_to 'Back to tests', admin_root_path %> |
+<%= link_to 'Edit', edit_admin_test_path(@test) %>
