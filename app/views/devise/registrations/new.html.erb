@@ -4,8 +4,13 @@
   <%= render 'shared/errors', entity: resource %>
 
   <p>
-    <%= f.label :login %><br>
-    <%= f.text_field :login, autofocus: true %>
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name, autofocus: true %>
+  </p>
+
+  <p>
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name%>
   </p>
 
   <p>

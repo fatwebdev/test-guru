@@ -9,7 +9,7 @@ class User < ApplicationRecord
     :validatable,
     :confirmable
 
-  validates :login, presence: true
+  validates :first_name, :last_name, presence: true
 
   has_many :created_tests, class_name: :Test, foreign_key: :author_id
   has_many :passing_tests
