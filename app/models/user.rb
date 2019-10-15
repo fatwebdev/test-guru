@@ -15,8 +15,11 @@ class User < ApplicationRecord
   has_many :passing_tests
   has_many :tests, through: :passing_tests
 
-
   def passing_test(test)
     passing_tests.order(id: :desc).find_by(test_id: test.id)
+  end
+
+  def full_name
+    "#{first_name} #{last_name}"
   end
 end
