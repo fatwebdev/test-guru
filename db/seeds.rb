@@ -10,7 +10,9 @@
 
 # create users
 [%w[amanda amanda@test.ru pa$$word], %w[mike mike@test.ru passw0rd]].map do |login, email, password|
-  User.new(login: login, email: email, password: password).save
+  user = User.new(login: login, email: email, password: password)
+  user.save
+  user.confirm
 end
 
 user_amanda = User.find_by(email: 'amanda@test.ru')
