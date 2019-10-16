@@ -6,10 +6,13 @@
       <th>title</th>
       <th>questions count</th>
       <th>level</th>
-      <th></th>
+      <th colspan="3">actions</th>
     </tr>
   </thead>
   <tbody>
     <%= render @tests %>
   </tbody>
 <table>
+
+<br/>
+<%= link_to 'New test', new_admin_test_path %>

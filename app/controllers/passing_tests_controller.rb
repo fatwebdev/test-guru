@@ -8,6 +8,7 @@ class PassingTestsController < ApplicationController
     @passing_test.accept!(answer_ids)
 
     if @passing_test.completed?
+      TestsMailer.complited_test(@passing_test).deliver_now
       redirect_to result_passing_test_path(@passing_test)
     else
       render :show
