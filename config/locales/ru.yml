@@ -1,0 +1,154 @@
+ru:
+  activerecord:
+    models:
+      answer: 'Ответ'
+      category: 'Категория'
+      question: 'Вопрос'
+      test: 'Тест'
+    attributes:
+      answer:
+        body: 'ответ'
+        correct: 'правильный'
+      category:
+        title: 'название'
+      question:
+        body: 'вопрос'
+      test:
+        title: 'название'
+        level: 'уровень'
+        category_id: 'категория'
+      user:
+        first_name: 'имя'
+        last_name: 'фамилия'
+        email: 'email'
+        password: 'пароль'
+        password_confirmation: 'подтверждение пароля'
+    errors:
+      models:
+        answer:
+          attributes:
+            base:
+              max_answers:
+                one: 'У вопроса может быть максимум %{count} ответ'
+                few: 'У вопроса может быть максимум %{count} ответа'
+                other: 'У вопроса может быть максимум %{count} ответов'
+  helpers:
+    submit:
+      user:
+        create: 'Зарегистрироваться'
+    select:
+      prompt: 'Выберите категорию'
+  devise:
+    registrations:
+      new:
+        header: 'Регистрация'
+        password_min_char: '(минимум %{count} символов)'
+    sessions:
+      new:
+        header: 'Вход'
+  layouts:
+    footer:
+      name: 'Ян'
+      description: 'Учебный проект в онлайн школе Thinknetica'
+      school: 'онлайн школа Thinknetica'
+    nav:
+      welcome: 'Добро пожаловать, %{email} Гуру'
+      logout: 'Выйти'
+      sign_in: 'Войти'
+      sign_up: 'Зарегистрироваться'
+  shared:
+    errors:
+      header:
+        one: '%{count} Ошибка обнаружена:'
+        other: '%{count} Errors detected:'
+  admin:
+    base:
+      admin_required: 'Вы не имеете права просматривать эту страницу'
+    questions:
+      question:
+        show: 'Просмотр'
+        edit: 'Редактировать'
+        delete: 'Удалить'
+        delete_confirmation: 'Вы уверенны?'
+      show:
+        header: '%{title} Вопрос'
+        question_not_found: 'Вопрос не был найден'
+        answer:
+          one: 'Ответ'
+          other: 'Ответы'
+        new_answer: 'Добавить Ответ'
+        back: 'Назад'
+        edit: 'Редактировать'
+      edit:
+        header: 'Редактирование %{title} Вопроса'
+        back: 'Назад'
+      new:
+        header: 'Создание Нового %{title} Вопроса'
+        back: 'Назад'
+    answers:
+      answer:
+        show: 'Просмотр'
+        edit: 'Редактировать'
+        delete: 'Удалить'
+        delete_confirmation: 'Вы уверенны?'
+      edit:
+        header: 'Редактирование Ответа'
+        show: 'Просмотр'
+        back: 'Назад'
+      new:
+        header: 'Создание Ответа'
+        back: 'Назад'
+      show:
+        header: 'Вопрос'
+        answer: 'Ответ'
+        correct: 'Правильный'
+        edit: 'Редактировать'
+        back: 'Назад'
+    tests:
+      test:
+        show: 'Просмотр'
+        edit: 'Редактировать'
+        delete: 'Удалить'
+        delete_confirmation: 'Вы уверенны?'
+      edit:
+        header: 'Редактирование Теста'
+        back: 'Назад'
+        show: 'Просмотр'
+      index:
+        header: 'Тесты'
+        table:
+          title: 'название'
+          questions_count: 'количество вопросов'
+          level: 'уровень'
+          actions: 'действия'
+        new_test: 'Создать Новый Тест'
+      new:
+        header: 'Создание Теста'
+        back: 'Назад'
+      show:
+        description: 'категория: %{category}, уровень: %{level}'
+        table:
+          question: 'вопрос'
+          actions: 'действия'
+        new_question: 'Добавить вопрос'
+        back: 'Назад'
+        edit: 'Редактировать'
+  passing_tests:
+    result:
+      header: 'Вы закончили прохождение %{title} теста!'
+      before_percentage: 'Вы были правы в'
+      after_percentage: 'случаев.'
+      back: 'Назад'
+    show:
+      header: 'Прохождение %{title} Теста'
+      question_of: '%{current} вопрос из %{questions_count}'
+      next: 'Далее'
+  tests:
+    test:
+      start: 'Начать'
+    index:
+      header: 'Тесты'
+      table:
+        title: 'название'
+        questions_count: 'количество вопросов'
+        level: 'уровень'
