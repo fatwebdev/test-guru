@@ -53,6 +53,7 @@ ru:
       school: 'онлайн школа Thinknetica'
     nav:
       welcome: 'Добро пожаловать, %{email} Гуру'
+      admin_panel: 'Админ Панель'
       logout: 'Выйти'
       sign_in: 'Войти'
       sign_up: 'Зарегистрироваться'

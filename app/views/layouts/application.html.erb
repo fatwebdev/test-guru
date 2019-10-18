@@ -13,9 +13,15 @@
   </head>
 
   <body>
-    <%= render 'layouts/nav' %>
-    <%= flash_message %>
-    <%= yield %>
-    <%= render 'layouts/footer' %>
+    <div class="mb-1">
+      <%= render 'layouts/nav' %>
+    </div>
+    <div class="container">
+      <%= flash_message %>
+      <div class="mt-2 mb-2">
+        <%= yield %>
+      </div>
+      <%= render 'layouts/footer' %>
+    </div>
   </body>
 </html>
