@@ -1,6 +1,8 @@
-<h1><%= t('.header', title: @passing_test.test.title) %></h1>
+<h1 class="mb-4">
+  <%= t('.header', title: @passing_test.test.title) %>
+</h1>
 
-<p>
+<p class="mb-4">
   <%= t('.before_percentage') %>
   <span class="<%= @passing_test.passed? ? "pass" : "fail" %>">
     <%= @passing_test.percentage_of_completion %>%

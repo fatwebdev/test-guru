@@ -1,15 +1,17 @@
-<h1><%= t('.header') %></h1>
+<h1 class="mb-4">
+  <%= t('.header') %>
+</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th><%= t('.table.title') %></th>
-      <th><%= t('.table.questions_count') %></th>
-      <th><%= t('.table.level') %></th>
-      <th></th>
+      <th class="w-100"><%= t('.table.title') %></th>
+      <th class="text-nowrap"><%= t('.table.questions_count') %></th>
+      <th class="text-nowrap"><%= t('.table.level') %></th>
+      <th class="text-nowrap"></th>
     </tr>
   </thead>
   <tbody>
     <%= render @tests %>
   </tbody>
-<table>
+</table>
