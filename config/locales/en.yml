@@ -30,4 +30,155 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    models:
+      answer: 'Answer'
+      category: 'Category'
+      question: 'Question'
+      test: 'Test'
+    attributes:
+      answer:
+        body: 'answer'
+        correct: 'correct'
+      category:
+        title: 'title'
+      question:
+        body: 'question'
+      test:
+        title: 'title'
+        level: 'level'
+        category_id: 'category'
+      user:
+        first_name: 'first name'
+        last_name: 'last name'
+        email: 'email'
+        password: 'password'
+        password_confirmation: 'password confirmation'
+    errors:
+      models:
+        answer:
+          attributes:
+            base:
+              max_answers:
+                one: 'Question can have max %{count} answer'
+                other: 'Question can have max %{count} answers'
+  helpers:
+    submit:
+      user:
+        create: 'Sign up'
+    select:
+      prompt: 'Select category'
+  devise:
+    registrations:
+      new:
+        header: 'Sign up'
+        password_min_char: '(%{count} characters minimum)'
+    sessions:
+      new:
+        header: 'Log in'
+  layouts:
+    footer:
+      name: 'Yan'
+      description: 'Educational project in online-school Thinknetica'
+      school: 'online school Thinknetica'
+    nav:
+      welcome: 'Welcome, %{email} Guru'
+      logout: 'Logout'
+      sign_in: 'Sign In'
+      sign_up: 'Sign Up'
+  shared:
+    errors:
+      header:
+        one: '%{count} Error detected:'
+        other: '%{count} Errors detected:'
+  admin:
+    base:
+      admin_required: 'You are not authorized to view this page'
+    questions:
+      question:
+        show: 'Show'
+        edit: 'Edit'
+        delete: 'Delete'
+        delete_confirmation: 'Are you sure?'
+      show:
+        header: '%{title} Question'
+        question_not_found: 'Question was not found'
+        answer:
+          one: 'Answer'
+          other: 'Answers'
+        new_answer: 'New answer'
+        back: 'Back'
+        edit: 'Edit'
+      edit:
+        header: 'Edit %{title} Question'
+        back: 'Back'
+      new:
+        header: 'Create New %{title} Question'
+        back: 'Back'
+    answers:
+      answer:
+        show: 'Show'
+        edit: 'Edit'
+        delete: 'Delete'
+        delete_confirmation: 'Are you sure?'
+      edit:
+        header: 'Editing Answer'
+        show: 'Show'
+        back: 'Back'
+      new:
+        header: 'New Answer'
+        back: 'Back'
+      show:
+        header: 'Question'
+        answer: 'Answer'
+        correct: 'Correct'
+        edit: 'Edit'
+        back: 'Back'
+    tests:
+      test:
+        show: 'Show'
+        edit: 'Edit'
+        delete: 'Delete'
+        delete_confirmation: 'Are you sure?'
+      edit:
+        header: 'Edit test'
+        back: 'Back'
+        show: 'Show'
+      index:
+        header: 'Tests'
+        table:
+          title: 'title'
+          questions_count: 'questions count'
+          level: 'level'
+          actions: 'actions'
+        new_test: 'New test'
+      new:
+        header: 'New test'
+        back: 'Back'
+      show:
+        description: 'category: %{category}, level: %{level}'
+        table:
+          question: 'question'
+          actions: 'actions'
+        new_question: 'New question'
+        back: 'Back'
+        edit: 'Edit'
+  passing_tests:
+    result:
+      header: 'The %{title} Test was Completed!'
+      before_percentage: 'You were right'
+      after_percentage: 'of the time.'
+      back: 'Back'
+    show:
+      header: 'Passing the %{title} Test'
+      question_of: 'Question %{current} of %{questions_count}'
+      next: 'Next'
+  tests:
+    test:
+      start: 'Start'
+    index:
+      header: 'Tests'
+      table:
+        title: 'title'
+        questions_count: 'questions count'
+        level: 'level'

@@ -1,11 +1,11 @@
-<h1>The <%= @passing_test.test.title %> Test was Completed!</h1>
+<h1><%= t('.header', title: @passing_test.test.title) %></h1>
 
 <p>
-  You were right
+  <%= t('.before_percentage') %>
   <span class="<%= @passing_test.passed? ? "pass" : "fail" %>">
     <%= @passing_test.percentage_of_completion %>%
   </span>
-  of the time.
+  <%= t('.after_percentage') %>
 </p>
 
-<%= link_to 'Back to Tests', tests_path %>
+<%= link_to t('.back'), tests_path %>
