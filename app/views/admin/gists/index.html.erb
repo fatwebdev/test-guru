@@ -1,0 +1,14 @@
+<h1 class="mb-4">
+  <%= t('.header') %>
+</h1>
+
+<table class="table">
+  <thead>
+    <th><%= t('.table.question') %></th>
+    <th><%= t('.table.gist_hash') %></th>
+    <th><%= t('.table.user') %></th>
+  </thead>
+  <tbody>
+    <%= render @gists %>
+  </tbody>
+</table>

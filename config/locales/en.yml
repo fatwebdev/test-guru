@@ -165,6 +165,13 @@ en:
         new_question: 'New question'
         back: 'Back'
         edit: 'Edit'
+    gists:
+      index:
+        header: 'Created Gists'
+        table:
+          question: 'question'
+          gist_hash: 'gist hash'
+          user: 'user'
   passing_tests:
     result:
       header: 'The %{title} Test was Completed!'

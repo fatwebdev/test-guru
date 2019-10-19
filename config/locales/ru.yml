@@ -135,6 +135,13 @@ ru:
         new_question: 'Добавить вопрос'
         back: 'Назад'
         edit: 'Редактировать'
+    gists:
+      index:
+        header: 'Созданные Гисты'
+        table:
+          question: 'вопрос'
+          gist_hash: 'хэш гиста'
+          user: 'пользователь'
   passing_tests:
     result:
       header: 'Вы закончили прохождение %{title} теста!'
