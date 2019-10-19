@@ -175,6 +175,8 @@ en:
       header: 'Passing the %{title} Test'
       question_of: 'Question %{current} of %{questions_count}'
       next: 'Next'
+    gist:
+      failure: 'Error, please try again later'
   tests:
     test:
       start: 'Start'

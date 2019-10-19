@@ -145,6 +145,8 @@ ru:
       header: 'Прохождение %{title} Теста'
       question_of: '%{current} вопрос из %{questions_count}'
       next: 'Далее'
+    gist:
+      failure: 'Ошибка, пожалуйста повторите попытку позже'
   tests:
     test:
       start: 'Начать'
