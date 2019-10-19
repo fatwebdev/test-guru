@@ -1,22 +1,24 @@
-<h1><%= @test.title %></h1>
+<h1 class="mb-4">
+  <%= @test.title %>
+</h1>
 <p><%= t('.description', category: @test.category.title, level: @test.level)%></p>
 
-<div>
-  <table>
+
+
+<div class="mb-4">
+  <%= link_to t('.new_question'), new_admin_test_question_path(@test), class: "btn btn-primary mb-4" %>
+  <table class="table">
     <thead>
       <tr>
-        <th><%= t('.table.question') %></th>
-        <th colspan="3"><%= t('.table.actions') %></th>
+        <th class="w-100"><%= t('.table.question') %></th>
+        <th><%= t('.table.actions') %></th>
       </tr>
     </thead>
     <tbody>
       <%= render @test.questions %>
     </tbody>
   </table>
-
-  <%= link_to t('.new_question'), new_admin_test_question_path(@test) %>
 </div>
 
-<br/>
 <%= link_to t('.back'), admin_root_path %> |
 <%= link_to t('.edit'), edit_admin_test_path(@test) %>

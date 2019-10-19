@@ -1,4 +1,6 @@
-<h1><%= t('.header', title: @question.test.title) %></h1>
+<h1 class="mb-4">
+  <%= t('.header', title: @question.test.title) %>
+</h1>
 
 <p>
   <%= @question.body %>
@@ -6,9 +8,9 @@
 
 <h2><%= t('.answer', count: @question.answers.count) %></h2>
 
-<%= link_to t('.new_answer'), new_admin_question_answer_path(@question) %>
+<%= link_to t('.new_answer'), new_admin_question_answer_path(@question), class: "btn btn-primary" %>
 
-<ol>
+<ol class="mt-4 mb-4">
   <%= render @question.answers %>
 </ol>
 

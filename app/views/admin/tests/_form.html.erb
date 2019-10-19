@@ -1,22 +1,22 @@
 <%= form_with model: [:admin, @test], local: true do |f| %>
   <%= render 'shared/errors', entity: @test %>
 
-  <p>
+  <p class="form-group">
     <%= f.label :title %>
     <br/>
-    <%= f.text_field :title, id: :test_title %>
+    <%= f.text_field :title, id: :test_title, class: "form-control" %>
   </p>
 
-  <p>
+  <p class="form-group">
     <%= f.label :level %>
     <br/>
-    <%= f.number_field :level, id: :test_level %>
+    <%= f.number_field :level, id: :test_level, class: "form-control" %>
   </p>
 
-  <p>
+  <p class="form-group">
     <%= f.label :category_id %>
-    <%= f.collection_select :category_id, Category.all, :id, :title, prompt: true %>
+    <%= f.collection_select :category_id, Category.all, :id, :title, {prompt: true}, {class: "form-control"} %>
   </p>
 
-  <%= f.submit %>
+  <%= f.submit class: "btn btn-primary" %>
 <% end %>

@@ -1,20 +1,24 @@
-<h1><%= t('.header', title: @passing_test.test.title) %></h1>
+<h1 class="mb-4">
+  <%= t('.header', title: @passing_test.test.title) %>
+</h1>
 
-<p><%= t('.question_of', current: current_question_number, questions_count: @passing_test.test.questions.count) %></p>
+<p class="mb-4"><%= t('.question_of', current: current_question_number, questions_count: @passing_test.test.questions.count) %></p>
 
-<b>
-  <%= @passing_test.current_question.body %>
-</b>
+<p>
+  <b>
+    <%= @passing_test.current_question.body %>
+  </b>
+</p>
 
 <%= form_with url: passing_test_path(@passing_test), method: :put, local: true do |f| %>
   <%= f.collection_check_boxes :answer_ids, @passing_test.current_question.answers, :id, :body, include_hidden: false do |b| %>
-    <p>
-      <%= b.check_box id: "answer_ids_#{b.object.id}" %>
-      <%= b.label %>
+    <p class="form-check">
+      <%= b.check_box id: "answer_ids_#{b.object.id}", class: "form-check-input" %>
+      <%= b.label class: "form-check-label" %>
     </p>
   <% end %>
 
   <p>
-    <%= f.submit t('.next') %>
+    <%= f.submit t('.next'), class: "btn btn-primary" %>
   </p>
 <% end %>

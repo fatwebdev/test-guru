@@ -1,6 +1,9 @@
-<h1><%= t('.header') %></h1>
+<h1 class="mb-4">
+  <%= t('.header') %>
+</h1>
 
-<%= render 'form' %>
+<div class="mb-4">
+  <%= render 'form' %>
+</div>
 
-<br/>
 <%= link_to t('.back'), admin_root_path %>

@@ -1,7 +1,9 @@
-<h1><%= question_header_for(:new) %></h1>
+<h1 class="mb-4">
+  <%= question_header_for(:new) %>
+</h1>
 
+<div class="mb-4">
+  <%= render 'form' %>
+</div>
 
-<%= render 'form' %>
-
-<br/>
 <%= link_to t('.back'), admin_test_path(@question.test) %>

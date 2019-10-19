@@ -1,6 +1,10 @@
 <tr>
   <td><%= question.body %></td>
-  <td><%= link_to t('.show'), admin_question_path(question) %></td>
-  <td><%= link_to t('.edit'), edit_admin_question_path(question) %></td>
-  <td><%= link_to t('.delete'), admin_question_path(question), method: :delete, data: { confirm: t('.delete_confirmation') } %></td>
+  <td>
+    <div class="btn-group" role="group">
+      <%= link_to t('.show'), admin_question_path(question), class: "btn btn-info" %>
+      <%= link_to t('.edit'), edit_admin_question_path(question), class: "btn btn-primary" %>
+      <%= link_to t('.delete'), admin_question_path(question), method: :delete, data: { confirm: t('.delete_confirmation') }, class: "btn btn-danger" %>
+    </div>
+  </td>
 </tr>
