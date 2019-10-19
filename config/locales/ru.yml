@@ -1,4 +1,5 @@
 ru:
+  gist_description: 'Вопрос о %{title} с TestGuru'
   activerecord:
     models:
       answer: 'Ответ'
