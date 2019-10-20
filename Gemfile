@@ -28,6 +28,12 @@ gem 'devise', '~> 4.0'
 # locale
 gem 'rails-i18n', '~> 6.0.0'
 
+# env
+gem 'dotenv-rails', '~> 2.7.5'
+
+# github client
+gem 'octokit', '~> 4.14.0'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

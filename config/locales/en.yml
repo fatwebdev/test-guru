@@ -30,6 +30,7 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  gist_description: 'A question about %{title} from TestGuru'
   activerecord:
     models:
       answer: 'Answer'
@@ -164,6 +165,13 @@ en:
         new_question: 'New question'
         back: 'Back'
         edit: 'Edit'
+    gists:
+      index:
+        header: 'Created Gists'
+        table:
+          question: 'question'
+          gist_hash: 'gist hash'
+          user: 'user'
   passing_tests:
     result:
       header: 'The %{title} Test was Completed!'
@@ -174,6 +182,8 @@ en:
       header: 'Passing the %{title} Test'
       question_of: 'Question %{current} of %{questions_count}'
       next: 'Next'
+    gist:
+      failure: 'Error, please try again later'
   tests:
     test:
       start: 'Start'
