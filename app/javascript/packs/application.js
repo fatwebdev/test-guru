@@ -19,4 +19,5 @@ require("channels");
 import "jquery";
 import "bootstrap";
 import sort from '../helpers/sorting';
+import passwordConfirmation from '../helpers/passwordConfirmation';
 
