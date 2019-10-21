@@ -6,6 +6,7 @@ ru:
       category: 'Категория'
       question: 'Вопрос'
       test: 'Тест'
+      feedback: 'Отзыв'
     attributes:
       answer:
         body: 'ответ'
@@ -24,6 +25,9 @@ ru:
         email: 'email'
         password: 'пароль'
         password_confirmation: 'подтверждение пароля'
+      feedback:
+        title: 'заголовок'
+        body: 'отзыв'
     errors:
       models:
         answer:
@@ -52,6 +56,7 @@ ru:
       name: 'Ян'
       description: 'Учебный проект в онлайн школе Thinknetica'
       school: 'онлайн школа Thinknetica'
+      add_feedback: 'Добавить отзыв'
     nav:
       welcome: 'Добро пожаловать, %{email} Гуру'
       admin_panel: 'Админ Панель'
@@ -166,3 +171,12 @@ ru:
         title: 'название'
         questions_count: 'количество вопросов'
         level: 'уровень'
+  feedbacks:
+    new:
+      header: 'Добавить отзыв'
+      back: 'Назад'
+    create:
+      success: 'Ваш отзыв отправлен'
+  feedbacks_mailer:
+    feedback:
+      subject: 'Отзыв на TestGuru'
