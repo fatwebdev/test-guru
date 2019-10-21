@@ -1,1 +1,24 @@
 @import "~bootstrap/scss/bootstrap";
+
+[data-sort-by] {
+  cursor: pointer;
+  user-select: none;
+}
+
+[data-sort-order]::after {
+  content: '';
+  display: inline-block;
+  position: relative;
+  margin-left: 4px;
+  border: 6px solid transparent;
+}
+
+[data-sort-order="asc"]::after {
+  border-bottom-color: #0f0;
+  bottom: 3px;
+}
+
+[data-sort-order="desc"]::after {
+  border-top-color: #0f0;
+  top: 6px;
+}
