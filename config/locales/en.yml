@@ -142,6 +142,7 @@ en:
         edit: 'Edit'
         delete: 'Delete'
         delete_confirmation: 'Are you sure?'
+        cancel: 'Cancel'
       edit:
         header: 'Edit test'
         back: 'Back'
@@ -165,6 +166,8 @@ en:
         new_question: 'New question'
         back: 'Back'
         edit: 'Edit'
+      form_inline:
+        submit: 'OK'
     gists:
       index:
         header: 'Created Gists'

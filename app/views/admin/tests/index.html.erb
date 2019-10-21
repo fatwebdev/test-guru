@@ -4,10 +4,12 @@
 
 <%= link_to t('.new_test'), new_admin_test_path, class: "btn btn-primary mb-4" %>
 
-<table class="table">
+<%= render 'shared/errors', entity: @test %>
+
+<table class="table" data-inline-edit="title">
   <thead>
     <tr>
-      <th class="w-100"><%= t('.table.title') %></th>
+      <th class="w-100" data-sort-by="title"><%= t('.table.title') %></th>
       <th class="text-nowrap"><%= t('.table.questions_count') %></th>
       <th class="text-nowrap"><%= t('.table.level') %></th>
       <th class="text-nowrap"><%= t('.table.actions') %></th>

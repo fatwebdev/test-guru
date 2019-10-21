@@ -112,6 +112,7 @@ ru:
         edit: 'Редактировать'
         delete: 'Удалить'
         delete_confirmation: 'Вы уверенны?'
+        cancel: 'Отмена'
       edit:
         header: 'Редактирование Теста'
         back: 'Назад'
@@ -135,6 +136,8 @@ ru:
         new_question: 'Добавить вопрос'
         back: 'Назад'
         edit: 'Редактировать'
+      form_inline:
+        submit: 'OK'
     gists:
       index:
         header: 'Созданные Гисты'
