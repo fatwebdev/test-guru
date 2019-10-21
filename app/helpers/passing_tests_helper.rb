@@ -18,6 +18,6 @@ module PassingTestsHelper
   private
 
   def percent_of_passing_test
-    current_question_number.to_f / @passing_test.test.questions.count * 100
+    (current_question_number - 1).to_f / @passing_test.test.questions.count * 100
   end
 end
