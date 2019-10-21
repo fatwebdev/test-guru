@@ -20,4 +20,5 @@ import "jquery";
 import "bootstrap";
 import sort from '../helpers/sorting';
 import passwordConfirmation from '../helpers/passwordConfirmation';
+import inlineForm from '../helpers/inlineForm';
 

@@ -2,7 +2,11 @@
   <%= t('.header', title: @passing_test.test.title) %>
 </h1>
 
-<p class="mb-4"><%= t('.question_of', current: current_question_number, questions_count: @passing_test.test.questions.count) %></p>
+<p><%= t('.question_of', current: current_question_number, questions_count: @passing_test.test.questions.count) %></p>
+
+<div class="mb-4">
+  <%= progress_bar %>
+</div>
 
 <p>
   <b>
