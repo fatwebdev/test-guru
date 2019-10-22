@@ -3,6 +3,6 @@ class Question < ApplicationRecord
 
   belongs_to :test
 
-  has_many :answers
-  has_many :gists
+  has_many :answers, dependent: :destroy
+  has_many :gists, dependent: :destroy
 end
