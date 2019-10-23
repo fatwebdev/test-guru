@@ -9,6 +9,7 @@ class PassingTestsController < ApplicationController
 
     if @passing_test.completed?
       TestsMailer.complited_test(@passing_test).deliver_now
+      BadgeService.new(@passing_test).call
       redirect_to result_passing_test_path(@passing_test)
     else
       render :show
