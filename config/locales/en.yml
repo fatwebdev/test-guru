@@ -96,6 +96,7 @@ en:
     nav:
       welcome: 'Welcome, %{email} Guru'
       admin_panel: 'Admin Panel'
+      badges: 'Badges'
       logout: 'Logout'
       sign_in: 'Sign In'
       sign_up: 'Sign Up'
@@ -228,6 +229,9 @@ en:
   feedbacks_mailer:
     feedback:
       subject: 'TestGuru Feedback'
+  badges:
+    index:
+      header: 'Badges'
   service:
     badge:
       by_category: 'by all test in category'

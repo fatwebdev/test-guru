@@ -66,6 +66,7 @@ ru:
     nav:
       welcome: 'Добро пожаловать, %{email} Гуру'
       admin_panel: 'Админ Панель'
+      badges: 'Значки'
       logout: 'Выйти'
       sign_in: 'Войти'
       sign_up: 'Зарегистрироваться'
@@ -198,6 +199,9 @@ ru:
   feedbacks_mailer:
     feedback:
       subject: 'Отзыв на TestGuru'
+  badges:
+    index:
+      header: 'Значки'
   service:
     badge:
       by_category: 'за все тесты в категории'
