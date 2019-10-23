@@ -38,6 +38,7 @@ en:
       question: 'Question'
       test: 'Test'
       feedback: 'Feedback'
+      badge: 'Badge'
     attributes:
       answer:
         body: 'answer'
@@ -59,6 +60,11 @@ en:
       feedback:
         title: 'title'
         body: 'body'
+      badge:
+        title: 'title'
+        image: 'image'
+        rule_type: 'rule type'
+        rule_param: 'rule param'
     errors:
       models:
         answer:
@@ -180,6 +186,18 @@ en:
           question: 'question'
           gist_hash: 'gist hash'
           user: 'user'
+    badges:
+      badge:
+        rule: 'Rule'
+        rule_param: 'Rule parameter'
+        edit: 'Edit'
+      index:
+        header: 'Badges'
+        new: 'New Badge'
+      edit:
+        header: 'Edit %{title}'
+      new:
+        header: 'New Badge'
   passing_tests:
     result:
       header: 'The %{title} Test was Completed!'
@@ -210,3 +228,8 @@ en:
   feedbacks_mailer:
     feedback:
       subject: 'TestGuru Feedback'
+  service:
+    badge:
+      by_category: 'by all test in category'
+      by_level: 'by level'
+      by_first_try: 'by first try'

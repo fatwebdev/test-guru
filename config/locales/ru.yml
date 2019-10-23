@@ -7,6 +7,7 @@ ru:
       question: 'Вопрос'
       test: 'Тест'
       feedback: 'Отзыв'
+      badge: 'Значек'
     attributes:
       answer:
         body: 'ответ'
@@ -28,6 +29,11 @@ ru:
       feedback:
         title: 'заголовок'
         body: 'отзыв'
+      badge:
+        title: 'название'
+        image: 'изображение'
+        rule_type: 'правило'
+        rule_param: 'параметр правила'
     errors:
       models:
         answer:
@@ -150,6 +156,18 @@ ru:
           question: 'вопрос'
           gist_hash: 'хэш гиста'
           user: 'пользователь'
+    badges:
+      badge:
+        rule: 'Правило'
+        rule_param: 'Параметр правила'
+        edit: 'Редактировать'
+      index:
+        header: 'Значки'
+        new: 'Добавить Значек'
+      edit:
+        header: 'Редактирование %{title}'
+      new:
+        header: 'Новый Значек'
   passing_tests:
     result:
       header: 'Вы закончили прохождение %{title} теста!'
@@ -180,3 +198,8 @@ ru:
   feedbacks_mailer:
     feedback:
       subject: 'Отзыв на TestGuru'
+  service:
+    badge:
+      by_category: 'за все тесты в категории'
+      by_level: 'за все тесты с уровнем'
+      by_first_try: 'за тест в первой попытки'

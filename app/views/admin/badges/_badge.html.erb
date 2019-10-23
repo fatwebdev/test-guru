@@ -1,0 +1,7 @@
+<div class="col-3 mb-2">
+  <div><%= badge.title %></div>
+  <img class="img-fluid" src="<%= badge.image %>" />
+  <div><%= t('.rule') %>: <%= rule_name(badge.rule_type) %></div>
+  <div><%= t('.rule_param')%>: <%= badge.rule_param %></div>
+  <div><%= link_to t('.edit'), edit_admin_badge_path(badge), class: "btn btn-primary" %></div>
+</div>
