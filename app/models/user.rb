@@ -15,6 +15,7 @@ class User < ApplicationRecord
   has_many :passing_tests
   has_many :tests, through: :passing_tests
   has_many :gists
+  has_many :feedbacks
 
   def passing_test(test)
     passing_tests.order(id: :desc).find_by(test_id: test.id)
