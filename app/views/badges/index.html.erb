@@ -1,7 +1,12 @@
-<h1 class="mb-4">
-  <%= t('.header') %>
-</h1>
-
+<h2 class="mb-3">
+  <%= t('.received') %>
+</h2>
+<div class="row mb-4">
+  <%= render @user_badges %>
+</div>
+<h2 class="mb-3">
+  <%= t('.not_received') %>
+</h2>
 <div class="row">
-  <%= render @badges %>
+  <%= render @not_received_badges %>
 </div>

@@ -231,7 +231,8 @@ en:
       subject: 'TestGuru Feedback'
   badges:
     index:
-      header: 'Badges'
+      received: 'Received Badges'
+      not_received: 'Not Received Badges'
   service:
     badge:
       by_category: 'by all test in category'

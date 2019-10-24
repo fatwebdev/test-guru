@@ -30,4 +30,8 @@ class User < ApplicationRecord
   def admin?
     is_a?(Admin)
   end
+
+  def not_received_badges
+    Badge.where.not(id: badges)
+  end
 end

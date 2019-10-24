@@ -201,7 +201,8 @@ ru:
       subject: 'Отзыв на TestGuru'
   badges:
     index:
-      header: 'Значки'
+      received: 'Полученные Значки'
+      not_received: 'Не Полученные Значки'
   service:
     badge:
       by_category: 'за все тесты в категории'
