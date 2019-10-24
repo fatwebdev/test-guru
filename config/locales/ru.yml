@@ -179,6 +179,7 @@ ru:
     show:
       header: 'Прохождение %{title} Теста'
       question_of: '%{current} вопрос из %{questions_count}'
+      remainder_time: 'Осталось времени'
       next: 'Далее'
     gist:
       failure: 'Ошибка, пожалуйста повторите попытку позже'

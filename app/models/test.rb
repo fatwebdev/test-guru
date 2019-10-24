@@ -33,6 +33,8 @@ class Test < ApplicationRecord
   end
 
   def next_question_after(question)
+    return nil if question.nil?
+
     questions.order(:id).where('id > ?', question.id).first
   end
 end

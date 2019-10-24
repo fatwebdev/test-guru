@@ -5,12 +5,15 @@ class PassingTestsController < ApplicationController
   end
 
   def update
+    return set_complited! if @passing_test.time_is_over?
+
     @passing_test.accept!(answer_ids)
 
     if @passing_test.completed?
       TestsMailer.complited_test(@passing_test).deliver_now
       BadgeService.new(@passing_test).call
       redirect_to result_passing_test_path(@passing_test)
+      end_test!
     else
       render :show
     end
@@ -46,5 +49,15 @@ class PassingTestsController < ApplicationController
       question: @passing_test.current_question,
       url: url
     )
+  end
+
+  def end_test!
+    TestsMailer.complited_test(@passing_test).deliver_now
+    redirect_to result_passing_test_path(@passing_test)
+  end
+
+  def set_complited!
+    @passing_test.end_passing_test!
+    end_test!
   end
 end

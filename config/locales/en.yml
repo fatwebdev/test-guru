@@ -209,6 +209,7 @@ en:
     show:
       header: 'Passing the %{title} Test'
       question_of: 'Question %{current} of %{questions_count}'
+      remainder_time: 'Countdown'
       next: 'Next'
     gist:
       failure: 'Error, please try again later'

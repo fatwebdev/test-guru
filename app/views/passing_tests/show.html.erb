@@ -5,6 +5,7 @@
 <p><%= t('.question_of', current: current_question_number, questions_count: @passing_test.test.questions.count) %></p>
 
 <div class="mb-4">
+  <%= t('.remainder_time') %>: <span data-remainder-time="<%= @passing_test.remainder_time %>"></span>
   <%= progress_bar %>
 </div>
 
