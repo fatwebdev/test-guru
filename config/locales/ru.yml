@@ -20,6 +20,7 @@ ru:
         title: 'название'
         level: 'уровень'
         category_id: 'категория'
+        countdown: 'таймер'
       user:
         first_name: 'имя'
         last_name: 'фамилия'
