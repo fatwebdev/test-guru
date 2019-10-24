@@ -18,24 +18,13 @@ class BadgeService
 
   def call
     Badge.find_each do |badge|
-      case badge.rule_type.to_sym
-      when :by_category
-        add_badge!(badge) if all_tests_category?(badge.rule_param)
-      when :by_level
-        add_badge!(badge) if completed_all_test_by_level?(badge.rule_param.to_i)
-      when :by_first_try
-        add_badge!(badge) if test_first_try?(badge.rule_param)
-      end
+      @user.badges << badge if send("#{badge.rule_type}_award?", badge.rule_param)
     end
   end
 
   private
 
-  def add_badge!(badge)
-    @user.badges << badge
-  end
-
-  def all_tests_category?(category)
+  def by_category_award?(category)
     if @passing_test.test.category.title == category
       passed_count = PassingTest.correct_passed_tests(@user)
                                 .pluck('DISTINCT test_id')
@@ -44,11 +33,11 @@ class BadgeService
     end
   end
 
-  def test_certaion_level?(level)
-    @passing_test.test.level == level if @passing_test.done
+  def by_level_award?(level)
+    @passing_test.test.level == level.to_i if @passing_test.done
   end
 
-  def test_first_try?(title)
+  def by_first_try_award?(title)
     if @passing_test.test.title == title && @passing_test.done
       @user.tests.where(title: title).count == 1
     end
