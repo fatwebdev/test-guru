@@ -6,6 +6,12 @@ class PassingTest < ApplicationRecord
   before_validation :before_validation_set_first_question, on: :create
   before_validation :before_validation_set_next_question, on: :update
 
+  before_update :before_update_test_passed
+
+  scope :correct_passed_tests, ->(user) {
+    user.test_passages.where(passed: true)
+  }
+
   MINIMUM_PERCENTAGE = 85
 
   def accept!(answer_ids)
@@ -48,5 +54,9 @@ class PassingTest < ApplicationRecord
 
   def next_question
     test.next_question_after(current_question)
+  end
+
+  def before_update_test_passed
+    self.done = passed? if completed?
   end
 end

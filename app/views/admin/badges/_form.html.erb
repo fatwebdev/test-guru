@@ -1,0 +1,29 @@
+<%= form_for [:admin, @badge], local: true do |f| %>
+  <%= render "shared/errors", entity: @badge %>
+
+  <p class="form-group">
+    <%= f.label :title %>
+    <br/>
+    <%= f.text_field :title, id: :test_title, class: "form-control" %>
+  </p>
+
+  <p class="form-group">
+    <%= f.label :image %>
+    <br/>
+    <%= f.text_field :image, id: :image, class: "form-control" %>
+  </p>
+
+  <p class="form-group">
+    <%= f.label :rule_type %>
+    <br/>
+    <%= f.select :rule_type, options_for_select(BadgeService.options_for_select, @badge.rule_type) %>
+  </p>
+
+  <p class="form-group">
+    <%= f.label :rule_param %>
+    <br/>
+    <%= f.text_field :rule_param, id: :rule_param, class: "form-control" %>
+  </p>
+
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
