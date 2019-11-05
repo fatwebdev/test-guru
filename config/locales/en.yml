@@ -51,6 +51,7 @@ en:
         title: 'title'
         level: 'level'
         category_id: 'category'
+        countdown: 'countdown'
       user:
         first_name: 'first name'
         last_name: 'last name'
@@ -208,6 +209,7 @@ en:
     show:
       header: 'Passing the %{title} Test'
       question_of: 'Question %{current} of %{questions_count}'
+      remainder_time: 'Countdown'
       next: 'Next'
     gist:
       failure: 'Error, please try again later'

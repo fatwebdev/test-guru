@@ -20,6 +20,7 @@ ru:
         title: 'название'
         level: 'уровень'
         category_id: 'категория'
+        countdown: 'таймер'
       user:
         first_name: 'имя'
         last_name: 'фамилия'
@@ -178,6 +179,7 @@ ru:
     show:
       header: 'Прохождение %{title} Теста'
       question_of: '%{current} вопрос из %{questions_count}'
+      remainder_time: 'Осталось времени'
       next: 'Далее'
     gist:
       failure: 'Ошибка, пожалуйста повторите попытку позже'

@@ -18,5 +18,11 @@
     <%= f.collection_select :category_id, Category.all, :id, :title, {prompt: true}, {class: "form-control"} %>
   </p>
 
+  <p class="form-group">
+    <%= f.label :countdown %>
+    <br/>
+    <%= f.number_field :countdown, id: :test_countdown, class: "form-control" %>
+  </p>
+
   <%= f.submit class: "btn btn-primary" %>
 <% end %>

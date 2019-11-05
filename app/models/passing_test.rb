@@ -34,6 +34,20 @@ class PassingTest < ApplicationRecord
     percentage_of_completion >= MINIMUM_PERCENTAGE
   end
 
+  def remainder_time
+    expires_at.to_i
+  end
+
+  def time_is_over?
+    expires_at < Time.now
+  end
+
+  def end_passing_test!
+    self.current_question = nil
+
+    save!
+  end
+
   private
 
   def before_validation_set_first_question
@@ -58,5 +72,9 @@ class PassingTest < ApplicationRecord
 
   def before_update_test_passed
     self.done = passed? if completed?
+  end
+
+  def expires_at
+    created_at + test.countdown.minutes
   end
 end
